@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Carnicería</title>
+	<script src="../carne.js"></script>
+	<!-- add bootstrap stylesheets -->
+	<link rel="stylesheet" href="../css/estilo.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Carnicería High Heavens</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="../pags/inicio.html">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../pags/heavens.html">Productos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../pags/contactos.html">Contacto</a>
+					</li>
+					<li class="nav-item">
+                    	<a class="nav-link" href="../index.html">Iniciar sesión</a>
+                	</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<h1 class="text-center">Promocion Disponible</h1>
+	<div class="product-grid">
+		<div class="product-item">
+			<img src="../img/bone.png">
+			<h2>T-Bone</h2>
+			<p>Precio: $220</p>
+			<label for="cantidad-t-Bone">Cantidad:</label>
+			<input type="number" id="cantidad-t-Bone" name="cantidad-t-Bone" min="1" max="10" value="1">
+			<button class="btn btn-primary" data-producto="t-Bone" onclick="addToCart(this)">Añadir al carrito</button>
+			<span class="subtotal">$0.00</span>
+		</div>
+		<div class="product-item">
+			<img src="../img/Rib.png">
+			<h2>Rib Eye</h2>
+			<p>Precio: $210</p>
+			<label for="cantidad-rib eye">Cantidad:</label>
+			<input type="number" id="cantidad-rib eye" name="cantidad-rib eye" min="1" max="10" value="1">
+			<button class="btn btn-primary" data-producto="rib eye" onclick="addToCart(this)">Añadir al carrito</button>
+			<span class="subtotal">$0.00</span>
+		</div>
+		<div class="product-item">
+			<img src="../img/back.jpg">
+			<h2>Back Ribs</h2>
+			<p>Precio: $230</p>
+			<label for="cantidad-back ribs">Cantidad:</label>
+			<input type="number" id="cantidad-back ribs" name="cantidad-back ribs" min="1" max="10" value="1">
+			<button class="btn btn-primary" data-producto="back ribs" onclick="addToCart(this)">Añadir al carrito</button>
+			<span class="subtotal">$0.00</span>
+		</div>
+		<div class="product-item">
+			<img src="../img/falda.jpg">
+			<h2>Falda</h2>
+			<p>Precio: $180</p>
+			<label for="cantidad-falda">Cantidad:</label>
+			<input type="number" id="cantidad-falda" name="cantidad-falda" min="1" max="10" value="1">
+			<button class="btn btn-primary" data-producto="falda" onclick="addToCart(this)">Añadir al carrito</button>
+			<span class="subtotal">$0.00</span>
+		</div>
+		<div class="product-item">
+			<img src="../img/pansa.jpg">
+			<h2>Pansa de res</h2>
+			<p>Precio: $205</p>
+			<label for="cantidad-pansa de res">Cantidad:</label>
+			<input type="number" id="cantidad-pansa de res" name="cantidad-pansa de res" min="1" max="10" value="1">
+			<button class="btn btn-primary" data-producto="pansa de res" onclick="addToCart(this)">Añadir al carrito</button>
+			<span class="subtotal">$0.00</span>
+		</div>
+		<div class="product-item">
+			<img src="../img/tripa.jpg">
+			<h2>Tripa de res</h2>
+			<p>Precio: $165</p>
+			<label for="cantidad-tripa de res">Cantidad:</label>
+			<input type="number" id="cantidad-tripa de res" name="cantidad-tripa de res" min="1" max="10" value="1">
+			<button class="btn btn-primary" data-producto="tripa de res" onclick="addToCart(this)">Añadir al carrito</button>
+			<span class="subtotal">$0.00</span>
+		</div>
+		<div class="product-item">
+			<img src="../img/pata.png">
+			<h2>Pata de res</h2>
+			<p>Precio: $150</p>
+			<label for="cantidad-pata de res">Cantidad:</label>
+			<input type="number" id="cantidad-pata de res" name="cantidad-pata de res" min="1" max="10" value="1">
+			<button class="btn btn-primary" data-producto="pata de res" onclick="addToCart(this)">Añadir al carrito</button>
+			<span class="subtotal">$0.00</span>
+		</div>
+		<div class="product-item">
+			<img src="../img/pechuga.jpg">
+			<h2>Pechuga</h2>
+			<p>Precio: $300</p>
+			<label for="cantidad-pechuga">Cantidad:</label>
+			<input type="number" id="cantidad-pechuga" name="cantidad-pechuga" min="1" max="10" value="1">
+			<button class="btn btn-primary" data-producto="pechuga" onclick="addToCart(this)">Añadir al carrito</button>
+			<span class="subtotal">$0.00</span>
+		</div>
+		<div class="product-item">
+			<img src="../img/alitas.jpg">
+			<h2>Alitas</h2>
+			<p>Precio: $90</p>
+			<label for="cantidad-producto1">Cantidad:</label>
+			<input type="number" id="cantidad-alitas" name="cantidad-alitas" min="1" max="10" value="1">
+			<button class="btn btn-primary" data-producto="alitas" onclick="addToCart(this)">Añadir al carrito</button>
+			<span class="subtotal">$0.00</span>
+		</div><br><br><br><br>
+		<div class="cart-summary">
+			<p>Cantidad de productos: <span id="product-count">0</span></p>
+			<p>Total a pagar: <span id="total-price">$0.00</span></p>
+		</div>
+	</div>
+	<footer class="footer-expand-lg footer-dark bg-dark">
+		<div class="left">
+			<p>High Heavens Carnicería</p>
+  		</div>
+  		<div class="right">
+  			<p>2023 &copy; All Rights Reserved.</p>
+ 		 </div>
+	</footer>
+	<!-- Agregar los scripts de Bootstrap al final del documento -->
+	<script src="https://unpkg.com/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
