@@ -8,11 +8,16 @@
 	<!-- add bootstrap stylesheets -->
 	<link rel="stylesheet" href="../css/estilo.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
+</head>G
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Carnicería High Heavens</a>
+			<a class="navbar-brand" href="#">
+				<div class="d-flex align-items-center">
+					<img src="../img/Logo.png" alt="Logo" width="40" height="40">
+					<span class="ml-2">Carnicería High Heavens</span>
+				</div>
+			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -42,7 +47,7 @@
 			</div>
 			<div class="col-md-6 order-md-1">
 				<h1>Contacto</h1>
-				<form id="login-form">
+				<form id="contact-form" onsubmit="return validateForm()" method="post" action="">
 					<div class="form-group">
 						<label for="nombre">Nombre:</label>
 						<input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -50,13 +55,46 @@
 					<div class="form-group">
 						<label for="email">Email:</label>
 						<input type="email" class="form-control" id="email" name="email" required>
+						<div id="emailError" style="color:red;"></div>
 					</div>
 					<div class="form-group">
 						<label for="mensaje">Mensaje:</label>
 						<textarea class="form-control" id="mensaje" name="mensaje" required></textarea>
 					</div>
-					<button type="submit" onclick="location.href='../pags/inicio.html'">Enviar</button>
+					<button type="submit">Enviar</button>
 				</form>
+				<script>
+					function validateForm() {
+						var name = document.getElementById("nombre").value;
+        				var email = document.getElementById("email").value;
+        				var message = document.getElementById("mensaje").value;
+        				var emailError = document.getElementById("emailError");
+        				var valid = true;
+        				// Validar que el correo electrónico tenga un formato correcto
+        				var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        				if (!emailPattern.test(email)) {
+        					emailError.innerHTML = "Correo electrónico inválido";
+        					valid = false;
+        				} else {
+        					emailError.innerHTML = "";
+        				}
+        				// Validar que se haya ingresado información en todos los campos
+        				if (name === "" || email === "" || message === "") {
+        					alert("Por favor llene todos los campos");
+        					valid = false;
+        				}
+        				return valid;
+        			}
+        			// Redirigir a la página "heavens.html" después de hacer clic en el botón "Enviar"
+    				var form = document.getElementById("contact-form");
+    				form.addEventListener("submit", function(event) {
+    					event.preventDefault();
+    					if (validateForm()) {
+    						window.location.href = "../pags/heavens.html";
+        				}
+        			});
+        		</script>
+
 			</div>
 		</div>
 	</div>
@@ -73,5 +111,3 @@
 	<script src="https://unpkg.com/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
