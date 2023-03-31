@@ -69,23 +69,53 @@ h1.text-center {
   font-weight: bold;
   margin-top: 15px;
 }
-/* Estilos para el pie de página */
 .footer-expand-lg {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #343a40;
-    color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+  color: #f8f9fa;
+  padding: 20px;
 }
 
-.footer-expand-lg .left p {
-    float: left;
-     
+.left {
+  flex: 1;
 }
 
-.footer-expand-lg .right p {
-    float: right;
+.left p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.right {
+  flex: 1;
+  text-align: center;
+}
+
+.right p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.social-media-icons {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.social-media-icons img {
+  width: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+
+.social-media-icons img:hover {
+  opacity: 0.8; /* disminuye la opacidad al pasar el cursor sobre el icono */
+  transform: scale(1.2); /* aumenta ligeramente el tamaño del icono */
+  transition: all 0.3s ease; /* suaviza la transición */
 }
 /* Estilos para la imagen de la tienda */
 img {
@@ -249,4 +279,3 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
   background-color: #0069d9;
 }
-
